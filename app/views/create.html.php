@@ -17,7 +17,7 @@
           <?php endforeach;?>
           <form id="formInfo" class="needs-validation" action="/dataCheck" method="post" enctype="multipart/form-data">
             <div class="row g-3">
-              <div class="col-8">
+              <div class="col-12 col-sm-8">
                 <label for="nomRessourcerie" class="form-label"><strong>Le nom de votre structure</strong></label>
                 <input type="text" class="form-control" id="nomRessourcerie" name="nomRessourcerie" placeholder="Ma structure" value="<?php if (array_key_exists('nomRessourcerie', $SESSION)){echo $SESSION['nomRessourcerie'];} ?>" required>
                 <div class="invalid-feedback">
@@ -25,16 +25,16 @@
                 </div>
               </div>
 
-              <div class="col-8">
+              <div class="col-12 col-sm-8">
                 <label for="adresseRessourcerie" class="form-label">Adresse de votre structure</label>
                 <input type="text" class="form-control" id="adresseRessourcerie" name="adresseRessourcerie" placeholder="24 rue du zéro déchet" value="<?php if (array_key_exists('adresseRessourcerie', $SESSION)){echo $SESSION['adresseRessourcerie'];} ?>" required>
                 <div class="invalid-feedback">
                   Adresse nécessaire
                 </div>
               </div>
-              <div class="col-4"></div>
+              <div class="col-4 d-none d-sm-block"></div>
 
-              <div class="col-2">
+              <div class="col-5 col-sm-2">
                 <label for="codePostal" class="form-label">Code postal</label>
                 <input type="text" class="form-control" id="codePostal" name="codePostal" placeholder="13001" value="<?php if (array_key_exists('codePostal', $SESSION)){echo $SESSION['codePostal'];} ?>" required>
                 <div class="invalid-feedback">
@@ -42,7 +42,7 @@
                 </div>
               </div>
 
-              <div class="col-6">
+              <div class="col-7 col-sm-6">
                 <label for="ville" class="form-label">Ville</label>
                 <input type="text" class="form-control" id="ville" name="ville" placeholder="Marseille" value="<?php if (array_key_exists('ville', $SESSION)){echo $SESSION['ville'];} ?>" required>
                 <div class="invalid-feedback">
@@ -50,7 +50,7 @@
                 </div>
               </div>
 
-              <div class="col-8">
+              <div class="col-12 col-sm-8">
                 <label for="email" class="form-label"><strong>Adresse email</strong></label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="vous@mastructure.fr" value="<?php if (array_key_exists('emailRessourcerie', $SESSION)){echo $SESSION['emailRessourcerie'];} ?>" required>
                 <p class="text-muted">Cette adresse email vous servira d'identifiant administrateur.ice</p>
@@ -60,7 +60,7 @@
               </div>
               </div>
 
-              <div class="col-8 mb-2">
+              <div class="col-12 col-sm-8 mb-2">
                 <label for="motDePasse" class="form-label"><strong>Mot de passe administrateur.ice</strong></label>
                 <div class="input-group has-validation">
                   <input type="password" class="form-control" id="motDePasse" name="motDePasse" placeholder="" required>
@@ -70,7 +70,7 @@
                 </div>
               </div>
 
-              <div class="col-8 mb-2">
+              <div class="col-12 col-sm-8 mb-2">
                 <label for="motDePasse" class="form-label">Confirmation du mot de passe administrateur.ice</label>
                 <div class="input-group has-validation">
                   <input type="password" class="form-control" id="motDePasseRepetition" name="motDePasseRepetition" placeholder="" required>
@@ -80,14 +80,14 @@
                 </div>
               </div>
 
-               <div class="mt-4 col-8">
+               <div class="mt-4 col-12 col-sm-8">
                     <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="sauvegarde" <?php if (array_key_exists('from_backup', $_GET) && $_GET['from_backup'] == true) {echo "checked";} ?>>
                     <label class="form-check-label" for="sauvegarde"><strong>Démarrer à partir d'une sauvegarde</strong></label>
                     </div>
                </div>
 
-                <div id="divFileInput" class="col-6" <?php if (! (array_key_exists('from_backup', $_GET) && $_GET['from_backup'] == true)) {echo "hidden";} ?>>
+                <div id="divFileInput" class="col-12 col-sm-6" <?php if (! (array_key_exists('from_backup', $_GET) && $_GET['from_backup'] == true)) {echo "hidden";} ?>>
                     <div class="">
                         <input class="form-control" type="file" id="fileInput" name="backupInput">
                     </div>
@@ -100,7 +100,7 @@
 
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12 col-sm-8">
                             <label class="form-label">Quel est l'accronyme du Réseau National des Ressourceries et Recycleries ?</label>
                             <input type="text" class="form-control" id="accronyme" name="accronyme" placeholder=" (en majuscule) " required=required size=5/>
                         </div>
