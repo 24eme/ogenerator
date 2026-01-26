@@ -1,6 +1,6 @@
 <div class="container mt-5">
 <div class="row">
-<div class="p5 m5 card shadow-sm">
+<div class="p-5 card shadow-sm">
 	<h1>Contacter l'équipe</h1>
 	<p>oressource.org est un projet proposé par la coopérative 24ème.</p>
     <p>Pour toute demande d'information sur le projet, de maintenance sur ORessource ou d'éléments liés à l'hébergement, vous pouvez contacter son équipe par les moyens suivants :</p>
