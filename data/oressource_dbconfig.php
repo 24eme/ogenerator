@@ -24,7 +24,7 @@ global $oressource_instance_name;
 $oressource_instance_name = explode('/', $_SERVER['REQUEST_URI'])[1];
 include('../config/config_'.$oressource_instance_name.'.php');
 
-$menu_extra = ['Assistance' => '/contact', 'Contact' => '/contact', 'À propos' => '/#projet'];
+$menu_extra = ['Assistance' => '/contact', 'Contact' => '/contact', 'À propos' => '/#projet', 'Contribuer' => 'https://liberapay.com/oressource/'];
 
 // Dans mysql le bon encodage pour l'utf-8 est utf8mb4.
 // https://medium.com/@adamhooper/in-mysql-never-use-utf8-use-utf8mb4-11761243e434
