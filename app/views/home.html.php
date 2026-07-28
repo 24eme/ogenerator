@@ -183,7 +183,20 @@
   </div>
 </div>
 
-  <div class="bg-white" style="border-bottom: 1px solid #ddd">
+<div class="bg-white" style="border-bottom: 1px solid #ddd">
+    <div class="container pt-4 pb-5" style="max-width: 1050px;">
+      <a name="fonctionnalites"></a>
+      <h2 class="mt-4 mb-3">Contribution financière libre</h2>
+      <p>Le logiciel ORessource est mis à disposition sur la plateforme à prix libre.<br /><br />
+Les contributions financières permettront de développer de nouvelle fonctionnalités ou de corriger des bugs dans le logiciel ainsi que d'améliorer cette plateforme communautaire oressource.org d'hébergement en ligne</p>
+<p class="text-center">
+<a href="https://donate.stripe.com/14A00i8cWgdqdThdhkdMI00" class="btn btn-primary">Faire un don</a>
+<br />
+<small class="text-muted"><br />Il est aussi possible de faire un don par virement, en nous <a href="https://oressource.org/contact">contactant directement</a>.</small></p>
+</div>
+</div>
+
+  <div class="bg-light" style="border-bottom: 1px solid #ddd">
     <div class="container pt-4 pb-5" style="max-width: 1050px;" >
       <h2 class="mt-4" id="quiSommesNous">Qui sommes nous ?</h2>
       <div class="row align-items-center">
@@ -198,7 +211,7 @@
     </div>
   </div>
 
-  <div class="bg-light">
+  <div class="bg-white">
   <div class="container" style="max-width: 1050px;">
     <footer class="text-center text-muted pt-2 pb-2">
       Logiciel libre sous licence AGPL-3.0 : <a href="https://github.com/24eme/ORessource_generator" target="_blank">voir le code source</a>
