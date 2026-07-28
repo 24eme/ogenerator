@@ -189,7 +189,7 @@
       <h2 class="mt-4 mb-3">Contribution financière libre</h2>
       <p>Le logiciel ORessource est mis à disposition sur la plateforme à prix libre.<br /><br />
 Les contributions financières permettront de développer de nouvelle fonctionnalités ou de corriger des bugs dans le logiciel ainsi que d'améliorer cette plateforme communautaire oressource.org d'hébergement en ligne</p>
-<p class="text-center">
+<p class="text-center mt-4">
 <a href="https://donate.stripe.com/14A00i8cWgdqdThdhkdMI00" class="btn btn-primary">Faire un don</a>
 <br />
 <small class="text-muted"><br />Il est aussi possible de faire un don par virement, en nous <a href="https://oressource.org/contact">contactant directement</a>.</small></p>
