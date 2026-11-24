@@ -191,7 +191,7 @@ Notre base de données s'appellera « oressource ».
 Entrons donc dans la matrice en saisissant cette commande :
 
 
-sudo mysql -user=root -host=localhost -e \
+sudo mysql --user=root --host=localhost -e \
 
 
 Explications pour ceux qui le souhaitent :
@@ -200,9 +200,9 @@ Explications pour ceux qui le souhaitent :
 Mysql : va lancer le shell mysql
 
 
-- user=root : avec le superutilisateur « root » créé initialement dans toute base de données
+- --user=root : avec le superutilisateur « root » créé initialement dans toute base de données
 
-- host=localhost : et ciblera l'hôte local pour s'effectuer
+- --host=localhost : et ciblera l'hôte local pour s'effectuer
 
 - e : en exécutant la commande
 
@@ -256,7 +256,7 @@ ATTENTION : bien remplacer dans la ligne suivante le X par votre nom d'utilisate
 (dans l'exemple, « probook6555b »)
 
 
-sudo mysql -user=oressource -host=localhost -database=oressource -p < /home/X/oressource/mysql/oressource.sql
+sudo mysql --user=oressource --host=localhost --database=oressource -p < /home/X/oressource/mysql/oressource.sql
 
 
 Explications pour ceux qui le souhaitent :
