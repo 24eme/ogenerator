@@ -58,3 +58,11 @@ Tester le projet en local :
 cd ORessource_generator
 php -S localhost:8000 -t web
 ```
+
+## Docs
+
+Pour générer la doc d'installation :
+
+```
+pandoc web/docs/installation.md > web/docs/installation.html; sed -i 's|src="images|src="docs/images|g' web/docs/installation.html
+```

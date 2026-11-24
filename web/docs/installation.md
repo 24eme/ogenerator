@@ -1,7 +1,4 @@
-
-
-Tutoriel d'installation du système de gestion oressource
-
+# Tutoriel d'installation du système de gestion oressource
 
 Requis :
 
@@ -41,7 +38,7 @@ de progression nous indique l'état d'avancement. Dans le terminal, lorsqu'une c
 haut pour la signification) s'affiche de nouveau.
 
 
-# INSTALLATION
+## INSTALLATION
 
 
 Pour utiliser le système de gestion Oressource, il faut que l'ordinateur récupère et installe différents logiciels qui seront utiles pour
@@ -50,9 +47,9 @@ son fonctionnement. Pour cela, ouvrir le terminal en cliquant sur son icône.
 
 La première étape consiste à ajouter un répertoire à notre liste de dépôt en entrant la commande :
 
-
+```
 sudo apt-add-repository ppa:ondrej/php -y
-
+```
 
 Le terminal demandera le mot de passe du compte Linux administrateur.
 
@@ -67,15 +64,13 @@ ppa:ondrej/php : présent chez l'utilisateur ondrej dans la rubrique php
 
 - y : et valider automatiquement la commande
 
-![Description](images/image_001.jpeg)
-
-
+![](images/image_001.jpeg)
 
 Ensuite, il faut télécharger et installer les logiciels dont nous aurons besoin. Pour cela :
 
-
+```
 sudo apt-get install apache2 git libapache2-mod-php mysql-server php8.1 php8.1-mysql phpmyadmin -y
-
+```
 
 De nouveau, il vous sera demandé votre mot de passe administrateur.
 
@@ -96,26 +91,26 @@ Phpmyadmin : Application Web de gestion de base de données mysql
 
 -y : Et confirmera automatiquement la commande
 
-![Description](images/image_002.jpeg)
+![](images/image_002.jpeg)
 
 Une fenêtre bleue va s'ouvrir au bout d'un certain temps.
 
-![Description](images/image_003.jpeg)
+![](images/image_003.jpeg)
 
 
 
 Il faut sélectionner « apache2 » avec la barre espace (un * va se mettre en face de apache2).
 
-![Description](images/image_004.jpeg)
+![](images/image_004.jpeg)
 
 Appuyer ensuite sur « TAB » pour accéder à OK.
 
-![Description](images/image_005.jpeg)
+![](images/image_005.jpeg)
 
 Appuyer sur Entrée et une nouvelle fenêtre va vous proposer de préconfigurer la base de données, ce qui n'est pas nécessaire
 dans notre cas.
 
-![Description](images/image_006.jpeg)
+![](images/image_006.jpeg)
 
 
 
@@ -129,16 +124,16 @@ Ensuite, des lignes de commande vont apparaître au fur et à mesure que des paq
 attendant que cela se termine.
 Lorsque tout sera terminé, le prompt apparait de nouveau.
 
-![Description](images/image_007.png)
+![](images/image_007.png)
 
-# MISE A JOUR
+## MISE À JOUR
 
 
 Il est recommandé de récupérer les dernières versions de nos paquets. Pour cela :
 
-
+```
 sudo apt-get update && sudo apt-get upgrade -y
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -151,13 +146,13 @@ apt-get upgrade : pour installer les mises à jour disponibles
 
 -y : et confirmer automatiquement la commande
 
-![Description](images/image_008.jpeg)
+![](images/image_008.jpeg)
 
 Ensuite, nous allons récupérer le projet sur le site de github via cette commande :
 
-
+```
 git clone https://github.com/mart1ver/oressource.git
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -165,15 +160,13 @@ Explications pour ceux qui le souhaitent :
 Git clone : va cloner un répertoire présent à l'adresse qui suit sur notre ordinateur
 https://github.com/mart1ver/oressource.git : à cette adresse
 
-![Description](images/image_009.jpeg)
+![](images/image_009.jpeg)
 
 Les fichiers nécessaires au bon fonctionnement du système sont maintenant présents sur notre ordinateur, il reste maintenant à
 configurer tout ça.
 
 
-
-
-CONFIGURATION INITIALE
+## CONFIGURATION INITIALE
 
 
 Pour accéder à notre système, il faut maintenant créer un utilisateur. Celui-ci aura un mot de passe associé qu'il vous faut choisir.
@@ -190,9 +183,9 @@ Notre base de données s'appellera « oressource ».
 
 Entrons donc dans la matrice en saisissant cette commande :
 
-
+```
 sudo mysql --user=root --host=localhost -e \
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -209,19 +202,19 @@ Mysql : va lancer le shell mysql
 
 \ : _______
 
-![Description](images/image_010.jpeg)
+![](images/image_010.jpeg)
 
 Un signe > va apparaitre, indiquant que l'on s'adresse maintenant au shell « mysql ».
 
-![Description](images/image_011.jpeg)
+![](images/image_011.jpeg)
 
 
 
 Il faut saisir alors :
 
-
-# "CREATE USER 'oressource'@'localhost' IDENTIFIED BY 'admin123';
-
+```
+"CREATE USER 'oressource'@'localhost' IDENTIFIED BY 'admin123';
+```
 
 Attention : sur cette première commande, bien remplacer le mot de passe « admin123 » par votre mot de passe
 
@@ -244,7 +237,7 @@ l'hôte 'localhost'
 CREATE DATABASE oressource : va créer une base de données appelée oressource
 " : termine la série de commandes
 
-![Description](images/image_012.jpeg)
+![](images/image_012.jpeg)
 
 Si tout s'est bien passé, le prompt apparaitra de nouveau.
 
@@ -255,9 +248,9 @@ Il faut ensuite charger les données contenues dans la base de données fournie.
 ATTENTION : bien remplacer dans la ligne suivante le X par votre nom d'utilisateur présent en tout début de ligne de terminal
 (dans l'exemple, « probook6555b »)
 
-
+```
 sudo mysql --user=oressource --host=localhost --database=oressource -p < /home/X/oressource/mysql/oressource.sql
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -275,7 +268,7 @@ Mysql : va lancer le shell mysql
 
 - < /home/X/oressource/mysql/oressource.sql : à la base de données oressource.sql située dans le répertoire indiqué
 
-![Description](images/image_013.jpeg)
+![](images/image_013.jpeg)
 
 Le terminal vous demandera en premier lieu le mot de passe utilisateur. Ensuite, le « Enter password » vous demande le mot de
 passe de la base renseigné à l'étape précédente (pour l'exemple, nous avions pris admin123)
@@ -284,17 +277,13 @@ passe de la base renseigné à l'étape précédente (pour l'exemple, nous avion
 Cette commande est un peu longue et aucune barre de progression ne s'affichera. Mais soyez patient, lorsque le prompt
 réapparaitra, c'est que tout est ok.
 
-
-
-
-MISE EN PLACE DU SERVEUR
-
+## MISE EN PLACE DU SERVEUR
 
 Il faut maintenant préparer l'hôte virtuel pour que notre système de gestion voit le jour et que l'on puisse s'y connecter. Pour cela :
 
-
+```
 sudo cp -pr oressource/ /var/www/oressource
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -311,13 +300,13 @@ oressource/ : du dossier oressource (situé dans /home)
 
 dossier oressource
 
-![Description](images/image_014.jpeg)
+![](images/image_014.jpeg)
 
 Nous allons attribuer les droits d'accès au répertoire. Pour cela :
 
-
+```
 sudo chown -R www-data:www-data /var/www/oressource
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -332,7 +321,7 @@ www-data : à l'utilisateur « www-data »
 :www-data : présent dans le groupe « www-data »
 /var/www/oressource : du dossier « oressource » situé dans le répertoire var,
 
-![Description](images/image_015.jpeg)
+![](images/image_015.jpeg)
 
 dossier www
 
@@ -351,11 +340,11 @@ Explications pour ceux qui le souhaitent :
 Cd : va déplacer le répertoire de travail du terminal dans un nouveau dossier
 /var/www/oressource/moteur : appelé « moteur » et situé dans le répertoire var, dossier « www », dossier « oressource »
 
-![Description](images/image_016.jpeg)
+![](images/image_016.jpeg)
 
 Maintenant, une ligne bleue est apparue derrière le prompt.
 
-![Description](images/image_017.jpeg)
+![](images/image_017.jpeg)
 
 Il faut créer une copie d'un fichier de base que nous allons personnaliser. Pour cela :
 
@@ -370,15 +359,13 @@ cp- lance un copie
 dbconfig.php.example : du fichier dbconfig.php.example
 dbconfig.php : en un nouveau fichier appelé dbconfig.php
 
-![Description](images/image_018.jpeg)
-
-
+![](images/image_018.jpeg)
 
 Il nous faut donc remplir ce fichier. Pour cela :
 
-
+```
 sudo vi dbconfig.php
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -386,7 +373,7 @@ Explications pour ceux qui le souhaitent :
 vi : lance l'éditeur de fichier Vi dans le terminal
 dbconfig.php : pour ouvrir le fichier dbconfig.php
 
-![Description](images/image_019.jpeg)
+![](images/image_019.jpeg)
 
 Et nous allons maintenant le modifier : ATTENTION, BIEN SUIVRE TOUTES LES ETAPES ! (si la tasse de café est vide, c'est
 le moment de s'aérer les méninges, de remplir de nouveau la tasse et de prendre une grande inspiration).
@@ -394,7 +381,7 @@ le moment de s'aérer les méninges, de remplir de nouveau la tasse et de prendr
 
 Voilà le fichier avant et l'endroit où vous allez devoir bidouiller :
 
-![Description](images/image_020.jpeg)
+![](images/image_020.jpeg)
 
 
 
@@ -407,7 +394,7 @@ Appuyer 5 fois sur la touche « Suppr » du clavier pour enlever l'ancien mot de
 Appuyer ensuite sur la touche « Inser » du clavier et entrer le mot de passe de la BASE (nous avons pris pour l'exemple
 admin123).
 
-![Description](images/image_021.jpeg)
+![](images/image_021.jpeg)
 
 
 
@@ -418,17 +405,17 @@ Un « : » devrait apparaitre tout en bas du terminal. (Si ce n'est pas le cas e
 de nouveau sur la touche « Inser » avant de vous placer sur le « : » inséré en trop dans le mot de passe et le supprimer avec
 « suppr »)
 
-![Description](images/image_022.jpeg)
+![](images/image_022.jpeg)
 
 
 
 Inscrire wq
 
-![Description](images/image_023.jpeg)
+![](images/image_023.jpeg)
 
 Appuyez sur « Entrée » pour sauvegarder les modifications.
 
-![Description](images/image_024.jpeg)
+![](images/image_024.jpeg)
 
 Nous sommes maintenant sortis de l'éditeur de fichier vi.
 
@@ -437,9 +424,9 @@ Nous sommes maintenant sortis de l'éditeur de fichier vi.
 
 Saisir la commande :
 
-
-cd~
-
+```
+cd ~
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -449,60 +436,61 @@ cd : va déplacer le répertoire de travail du terminal dans un nouveau dossier
 
 ~ : ici le répertoire de base symbolisé par ~
 
-![Description](images/image_025.jpeg)
+![](images/image_025.jpeg)
 
 GRAND BRAVO A VOUS ! Le plus dur est passé !
 
 
 Enfin, il reste quand même quelques étapes. Il nous faut maintenant entrer les caractéristiques http de notre serveur. Pour cela :
 
-
+```
 sudo vi /etc/apache2/sites-available/oressource.conf
-
+```
 
 Explications pour ceux qui le souhaitent :
 
 
 vi : lance l'éditeur de fichier vi dans le terminal
+
 /etc/apache2/sites-available/oressource.conf : en créant un fichier appelé oressource.conf
 
-![Description](images/image_026.jpeg)
+![](images/image_026.jpeg)
 
 
-![Description](images/image_027.jpeg)
+![](images/image_027.jpeg)
 
+```
 <VirtualHost *:80>
 ServerName
 DocumentRoot
 ErrorLog
 CustomLog
 </VirtualHost>
+```
 
-![Description](images/image_028.jpeg)
+![](images/image_028.jpeg)
 
 Copier/coller dans cette fenêtre vide le texte suivant (toujours avec le raccourci CTRL + MAJ + V) :
 
-
+```
 oressource.example.com
 /var/www/oressource/
 /var/log/apache2/oressource-error.log
 /var/log/apache2/oressource-access.log combined
-
-
-
+```
 
 Appuyer sur « : » puis inscrire wq et appuyer sur « Entrée » pour sauvegarder vos modifications et quitter l'éditeur de fichier vi.
 
-![Description](images/image_029.jpeg)
-![Description](images/image_030.jpeg)
+![](images/image_029.jpeg)
+![](images/image_030.jpeg)
 
 
 
 Nous allons maintenant activer le site « oressource ». Pour cela :
 
-
+```
 sudo a2ensite oressource
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -510,16 +498,15 @@ Explications pour ceux qui le souhaitent :
 A2ensite : active le site apache2
 Oressource : portant le nom de « oressource »
 
-![Description](images/image_031.jpeg)
+![](images/image_031.jpeg)
 
-# REDEMARRAGE
-
+## REDEMARRAGE
 
 Après toutes ces modifications, l'ordinateur va avoir besoin de redémarrer le service apache2 qui héberge notre site. Pour cela :
 
-
+```
 sudo systemctl restart apache2
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -528,15 +515,11 @@ Systemctl : appelle le système de gestion de services
 restart : pour relancer
 apache2 : le service apache2
 
-![Description](images/image_032.jpeg)
+![](images/image_032.jpeg)
 
 L'ensemble est maintenant pleinement fonctionnel. Il nous faut maintenant y accéder.
 
-
-
-
-ACCES AU SYSTEME
-
+## ACCES AU SYSTEME
 
 Pour accéder au système de gestion oressource que vous venez de mettre en route, il faut indiquer à l'ordinateur que vous allez
 utiliser pour la saisie des ventes et collectes à quel endroit aller le chercher. Le fichier hosts (et cela est valable pour Linux, Mac ou
@@ -560,9 +543,9 @@ CAS DE FIGURE 1 : MONO ORDINATEUR
 
 Modifier le fichier hosts de l'ordinateur en y ajoutant l'adresse de notre site. Pour cela :
 
-
+```
 sudo vi /etc/hosts
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -570,13 +553,13 @@ Explications pour ceux qui le souhaitent :
 vi : lance l'éditeur de fichier vi dans le terminal
 /etc/hosts : pour modifier le fichier hosts de l'ordinateur
 
-![Description](images/image_033.jpeg)
+![](images/image_033.jpeg)
 
 Nous allons y ajouter la ligne suivante, comme sur la capture d'écran :
 
-
-# 127.0.0.1 oressource.example.com
-
+```
+127.0.0.1 oressource.example.com
+```
 
 Appuyer sur « : » puis inscrire wq et appuyer sur « Entrée » pour sauvegarder vos modifications et quitter l'éditeur de fichier vi.
 
@@ -605,9 +588,9 @@ Il faut d'abord connaitre l'adresse que possède notre ordinateur qui héberge l
 
 Pour cela, ouvrir un terminal sur l'ordinateur que vous venez d'user en lui indulgeant tant de lignes de commande
 
-
+```
 ifconfig
-
+```
 
 Explications pour ceux qui le souhaitent :
 
@@ -621,16 +604,12 @@ Question : utilisez-vous une connexion wifi ou bien un câble réseau pour fourn
 En fonction de votre réponse, les résultats de cette commande seront différents. Le cas le plus probable étant que votre ordinateur
 « serveur » utilise un câble réseau, nous allons continuer les explications dans ce sens.
 
-![Description](images/image_034.jpeg)
-![Description](images/image_035.jpeg)
+![](images/image_034.jpeg)
+![](images/image_035.jpeg)
 
-# Adresse IP de votre serveur
-
-
-Masque de sous réseau
-
-
-# Nom de l'interface réseau
+**Adresse IP de votre serveur**
+**Masque de sous réseau**
+**Nom de l'interface réseau**
 
 
 Si vous utilisez le wifi, vous vous reporterez à l'interface réseau commençant par W (première capture par exemple : wlp2s0).
@@ -655,19 +634,17 @@ nous venons d'afficher) sur le réseau.
 
 Ouvrez les paramètres système de l'ordinateur à la rubrique « réseau ».
 
-![Description](images/image_036.jpeg)
+![](images/image_036.jpeg)
 
 Ouvrez l'onglet « filaire » (ou « wifi » pour ceux qui utilisent une connexion wifi).
 
-![Description](images/image_037.jpeg)
+![](images/image_037.jpeg)
 
-# Adresse IP de votre serveur
+**Adresse IP de votre serveur**
 
+**Route par défaut**
 
-# Route par défaut
-
-
-# Nom de l'interface réseau
+**Nom de l'interface réseau**
 
 
 Vérifiez bien que les informations affichées sur votre connexion active correspondent à celles que vous avez trouvé avec ifconfig.
@@ -680,15 +657,15 @@ Notez au passage l'adresse mentionnée de la « route par défaut ».
 
 Cliquez sur la roue de réglage.
 
-![Description](images/image_038.jpeg)
+![](images/image_038.jpeg)
 
 Rendez-vous dans la rubrique « IPv4 ».
 
-![Description](images/image_039.jpeg)
+![](images/image_039.jpeg)
 
 En face de « adresses », il doit être indiqué « Automatique (DHCP) ». Sélectionnez « Manuel ».
 
-![Description](images/image_040.jpeg)
+![](images/image_040.jpeg)
 
 Complétez les champs :
 
@@ -699,7 +676,7 @@ Complétez les champs :
 
 - Passerelle : correspond à la rubrique « route par défaut »
 
-![Description](images/image_041.jpeg)
+![](images/image_041.jpeg)
 
 Une fois que vous avez effectuez cela, votre ordinateur « serveur » gardera son adresse et votre ordinateur «
 retrouver.
@@ -730,16 +707,17 @@ Ouvrez ce fichier et modifiez-le.
 
 - Sur Mac : lancez la commande :
 
-
+```
 sudo nano /etc/hosts
-
+```
 
 - Sur Linux, lancez la commande :
 
-
+```
 sudo vi /etc/hosts
+```
 
-![Description](images/image_042.jpeg)
+![](images/image_042.jpeg)
 
 Lorsque le fichier hosts est ouvert, il vous suffit d'ajouter une ligne qui indiquera à votre ordinateur « client » que,
 demandez de rechercher votre site, il doit regarder à l'adresse IP de l'ordinateur « serveur ».
@@ -790,8 +768,8 @@ Actuellement, si toutes les étapes se sont correctement terminées (et si vous 
 pouvez enfin accéder à votre système de gestion « oressource » en ouvrant un navigateur internet et en y saisissant l'adresse
 suivante :
 
-
+```
 oressource.example.com
-
+```
 
 Félicitations à vous ! Vous avez réussi avec succès à installer et configurer oressource !

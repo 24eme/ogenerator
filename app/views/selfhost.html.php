@@ -13,7 +13,12 @@
                 Cet ordinateur devra être sous Linux. Une fois installé, pensez à sauvegarder régulièrement votre base ORessource
                 (et stocker ces sauvegardes sur un support différent).
             </p>
-            <p>La procédure d'installation de ORessource est décrite dans le document suivant :</p>
+            <p>La procédure d'installation de ORessource est décrite ci dessous (ou bien en <a href="tuto-ressource.pdf">pdf</a>) :</p>
+
+            <hr />
+
+            <?php include(dirname(__FILE__).'/../../web/docs/installation.html'); ?>
+
             <center>
             <embed src="tuto-ressource.pdf" width="100%" height="1000px" type="application/pdf">
             </center>
